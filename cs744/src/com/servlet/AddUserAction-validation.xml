@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"  
+    "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd"> 
+<validators>
+	<field name="uid">  
+        <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message>The user ID can't be null!</message>  
+        </field-validator>
+        <field-validator type="stringlength">  
+            <param name="minLength">6</param> 
+            <param name="maxLength">50</param> 
+            <message>The length of user ID must be at least 6 characters!</message>  
+        </field-validator>
+        <field-validator type="regex">  
+            <param name="expression"><![CDATA[(^\w*$)]]></param>  
+            <message>The user ID can't contain the special character!</message>  
+        </field-validator>
+        <!-- <field-validator type="regex">  
+            <param name="expression"><![CDATA[^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$]]></param>  
+            <message>The user ID must contain both number and alphabet!</message>  
+        </field-validator> -->
+    </field>  
+    <field name="password">  
+        <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message>The password can't be null!</message>  
+        </field-validator>
+        <field-validator type="stringlength">  
+            <param name="minLength">6</param>
+            <param name="maxLength">50</param>  
+            <message>The length of password must be at least 6 characters!</message>  
+        </field-validator>
+        <!-- <field-validator type="regex">  
+            <param name="expression"><![CDATA[^(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[~!@#$%^&*?]+$)$]]></param>  
+            <message>The password must contain number, alphabet and special character!</message>  
+        </field-validator> -->
+    </field>
+    <field name="firstname">  
+        <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message>The first name can't be null!</message>  
+        </field-validator>
+        <field-validator type="regex">  
+            <param name="expression"><![CDATA[^[a-zA-Z]+$]]></param>  
+            <message>The first name can't contain number or special character!</message>  
+        </field-validator>
+    </field> 
+    <field name="lastname">  
+        <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message>The last name can't be null!</message>  
+        </field-validator>
+        <field-validator type="regex">  
+            <param name="expression"><![CDATA[^[a-zA-Z]+$]]></param>  
+            <message>The last name can't contain number or special character!</message>  
+        </field-validator>
+    </field>   
+</validators>

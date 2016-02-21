@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+	<constant name="struts.action.extension" value="action" />
+		
+	<package name="authorityAdmin" extends="struts-default">
+		
+		<interceptors>  
+            <interceptor-stack name="mystack">  
+                <interceptor-ref name="defaultStack"></interceptor-ref>   
+            </interceptor-stack>  
+        </interceptors>  
+        <default-interceptor-ref name="mystack"></default-interceptor-ref> 
+	
+		<action name="listUser" class="com.servlet.showAllUserAction">
+			<result name="success">/userList.jsp</result>
+			<result name="input" type="dispatcher">/login.jsp</result>
+		</action>
+		
+		<action name="addUser" class="com.servlet.AddUserAction">
+			<result name="success" type="redirect">listUser.action</result>
+			<result name="input" type="dispatcher">/addUser.jsp</result>
+		</action>
+		
+		<action name="deleteUser" class="com.servlet.DeleteUserAction">
+			<result name="success" type="redirect">listUser.action</result>
+			<result name="input" type="dispatcher">/login.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>    

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.entity.User" table="USER">
+        <id name="uid" type="java.lang.String">
+            <column name="uid" length="50" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="java.lang.String">
+            <column name="first_name" length="50" not-null="true">
+                <comment>名字</comment>
+            </column>
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="last_name" length="50" not-null="true">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" length="100" not-null="true">
+                <comment>密码</comment>
+            </column>
+        </property>
+        <property name="qID1" type="java.lang.Integer">
+            <column name="qID1" length="50" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="qID2" type="java.lang.Integer">
+            <column name="qID2" length="50" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="qID3" type="java.lang.Integer">
+            <column name="qID3" length="50" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="ans1" type="java.lang.String">
+            <column name="ans1" length="100" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="ans2" type="java.lang.String">
+            <column name="ans2" length="100" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+        <property name="ans3" type="java.lang.String">
+            <column name="ans3" length="100" not-null="false">
+                <comment>姓氏</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
